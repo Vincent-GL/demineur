@@ -27,6 +27,8 @@ int main(void)
     free(board[0]);
     free(board[1]);
     free(board);
-
+    int *cd = Read_Coordinates();
+    std::cout << *(cd+1);
+    free(cd);
     return 0;
 }
