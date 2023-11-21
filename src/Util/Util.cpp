@@ -1,6 +1,10 @@
 #include "Util.h"
 
 std::string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const std::string ANSI_COLOR_RESET = "\033[0m";
+    const std::string ANSI_COLOR_GREEN = "\033[32m";
+    const std::string ANSI_COLOR_ORANGE = "\033[33m";
+    const std::string ANSI_COLOR_RED = "\033[31m";
 void Display_board(char **board, int size)
 {
 
@@ -9,7 +13,6 @@ void Display_board(char **board, int size)
     //*letters = &alphabet;
     for (int z = 1; z <= size; z++)
     {
-
         std::cout << *letters << " ";
         letters++; 
     }
@@ -30,8 +33,6 @@ void Display_board(char **board, int size)
     }
 }
 
-/*
-*/
 short Is_On_Corner(int x, int y, Demineur dm)
 {
     if (x == 0)
@@ -47,10 +48,7 @@ short Is_On_Corner(int x, int y, Demineur dm)
 
 void Display_Case(char c)
 {
-    const std::string ANSI_COLOR_RESET = "\033[0m";
-    const std::string ANSI_COLOR_GREEN = "\033[32m";
-    const std::string ANSI_COLOR_ORANGE = "\033[33m";
-    const std::string ANSI_COLOR_RED = "\033[31m";
+    
     std::string colorCodeStr;
     switch (c)
     {
@@ -74,6 +72,7 @@ int Convert_letter(char ltr)
     return ltr - 'A';
 }
 
+
 int *Read_Coordinates(/*Demineur dm*/)
 {
     std::cout << "Enter coordinates: (ex: A2)";
@@ -89,4 +88,3 @@ int *Read_Coordinates(/*Demineur dm*/)
     *(res+1) = line[1] - '0';
     return res;
 }
-

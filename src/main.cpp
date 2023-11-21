@@ -21,6 +21,11 @@ int main(void)
     for (int i = 0; i < 2; i++) {
         (*boardpt)[i] = lineB[i];
     }
+    Demineur dm = Demineur(3, 4);
+    std::cout << dm.Get_board_col_length() << "\n";
+    std::cout << dm.Get_board_row_length() << "\n";
+    std::cout << dm.Is_Won() << "\n";
+    std::cout << dm.Is_Lost(0,0) << "\n";
 
     //Display_board(board, 2);
     Display_Case('1');
